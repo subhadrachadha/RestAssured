@@ -1,0 +1,61 @@
+{
+  "transaction" : [ {
+    "amount" : {
+      "total" : "30.11",
+      "currency" : "USD",
+      "details" : {
+        "subtotal" : "30.00",
+        "tax" : "0.07",
+        "shipping" : "0.03",
+        "insurance" : "0.01",
+        "handling_fee" : "1.00",
+        "shipping_discount" : "-1.00"
+      }
+    },
+    "payment_options" : {
+      "allowed_payment_method" : "INSTANT_FUNDING_SOURCE"
+    },
+    "item_list" : {
+      "shipping_address" : {
+        "recipient_name" : "Brian Robinson",
+        "line1" : "4th Floor",
+        "line2" : "Unit #34",
+        "city" : "San Jose",
+        "state" : "CA",
+        "postal_code" : "95131",
+        "country_code" : "US",
+        "phone" : "011862212345678"
+      },
+      "items" : [ {
+        "name" : "hat",
+        "sku" : "1",
+        "description" : "Brown hat",
+        "price" : "3.00",
+        "currency" : "USD",
+        "tax" : "0.01",
+        "quantity" : "5"
+      }, {
+        "name" : "handbag",
+        "sku" : "product34",
+        "description" : "Black handbag",
+        "price" : "15.00",
+        "currency" : "USD",
+        "tax" : "0.02",
+        "quantity" : "1"
+      } ]
+    },
+    "description" : "The payment transaction description",
+    "custom" : "EBAY_EMS_90048630024435",
+    "invoice_number" : "48787589673",
+    "soft_descriptor" : "ECHI5786786"
+  } ],
+  "note_to_payer" : "Contact us for any questions on your order.",
+  "payer" : {
+    "payment_method" : "paypal"
+  },
+  "intent" : "sale",
+  "redirect_urls" : {
+    "return_url" : "https://example.com/return",
+    "cancel_url" : "https://example.com/cancel"
+  }
+}

@@ -90,8 +90,38 @@ public class SearchJsonPathExample {
 		System.out.println(salePrice);
 	}
 	
+	//get the names which have salesPrice
+	
+	@Test
+	public void test009()
+	{
+		List<String> names=given().queryParam("query","ipod").
+		queryParam("format","json").
+		queryParam("apikey",APIKEY).when().get("/search").then().extract().path("items.findAll{it.salePrice<150}.name");
+		System.out.println(names);
+	}
 	
 	
 	
+	//get all msrp value starts with Ref
+	
+	@Test
+	public void test010()
+	{
+		List<String> msrp=given().queryParam("format","json").queryParam("query","ipod").
+		queryParam("apikey",APIKEY).when().get("/search").then().extract().path("items.findAll{it.name==~/Ref.*/}.msrp");
+		System.out.println(msrp);
+		
+	}
+	
+	//get the salesPrice of an item ends with ed 
+	
+	public void test011()
+	{
+		List<String> salesPrice=given().queryParam("format","json").queryParam("query","ipod").
+		queryParam("apikey",APIKEY).when().get("/search").then().extract().path("items.findAll{it.name==~/.*ed/}.salesPrice");
+		System.out.println(salesPrice);
+		
+	}
 
 }

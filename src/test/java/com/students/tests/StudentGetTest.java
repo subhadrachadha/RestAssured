@@ -37,12 +37,12 @@ public class StudentGetTest extends TestBase{
 		given()
 		.when()
 		.get("/list")
-		.then();
+		.then().log().body();
 		//.statusCode(200);
 		
 	}
 	
-	@Test
+	/*@Test
 	public void getStudentInfo(){
 		Response response=given()
 		.when()
@@ -71,6 +71,6 @@ public class StudentGetTest extends TestBase{
 		.when()
 		.get("/list");
 	
-   System.out.println(response2.prettyPeek());}
+   System.out.println(response2.prettyPeek());}*/
 
 }
