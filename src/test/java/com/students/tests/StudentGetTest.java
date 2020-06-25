@@ -1,13 +1,12 @@
 package com.students.tests;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import com.student.base.TestBase;
 
 import io.restassured.response.Response;
 
-import static org.hamcrest.Matchers.*;
+
 
 
 public class StudentGetTest extends TestBase{

@@ -1,4 +1,4 @@
-package com.xmlpath.examples;
+	package com.xmlpath.examples;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import io.restassured.RestAssured;
@@ -90,6 +90,30 @@ public class SearchXMLPathExamples {
 					List<Object> saleprice=with(xml).getList("**.findAll{it.name=='Apple iPod touch 128GB (Previous Model)'}.salePrice");
 					System.out.println(saleprice);
 			
+		}
+		
+		//get the itemid starts with 12981
+		
+		@Test
+		public void test008()
+		{
+			List<String> item=given().queryParam("query","ipod")
+			.queryParam("format","json").
+			queryParam("apiKey",APIKEY).when().get("/search").then()
+			.extract().path("items.findAll{it.itemId==~/1298.*/}.itemId");
+			System.out.println(item);
+		}
+		
+		
+		@Test
+		public void test009()
+		{
+			String xml=given().queryParam("query","ipod")
+			.queryParam("format","xml").
+			queryParam("apiKey",APIKEY).when().get("/search").andReturn().asString();
+			//System.out.println(xml);
+			List<String> item=with(xml).getList("searchresponse.items.item.salePrice");
+			System.out.println(item);
 		}
 
 }

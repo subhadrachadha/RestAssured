@@ -1,11 +1,14 @@
 package com.students.tests;
 
 
-import static org.hamcrest.Matchers.*;
+
+import org.testng.annotations.Test;
 import java.util.ArrayList;
+
+import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
 import com.student.base.TestBase;
 import com.student.model.Student;
 
@@ -33,8 +36,8 @@ public class StudentPostTest extends TestBase {
 		.when()
 		.body(student)
 		.post()
-		.then();
-		//.statusCode(201);
+		.then()
+		.statusCode(405);
 		
 	
 	}

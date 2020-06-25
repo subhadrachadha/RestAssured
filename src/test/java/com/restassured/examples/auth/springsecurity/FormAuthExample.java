@@ -17,7 +17,7 @@ public class FormAuthExample {
 	public static void init()
 	{
 		filter=new SessionFilter();
-		RestAssured.baseURI="http://localhost:8085";
+		RestAssured.baseURI="http://localhost:8080";
 		RestAssured.given().auth().form("user","user",new FormAuthConfig("/login","uname","pwd"))
 		.filter(filter).get("/formAuth");
 		System.err.println(filter.getSessionId());

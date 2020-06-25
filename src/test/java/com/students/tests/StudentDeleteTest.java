@@ -1,10 +1,6 @@
 package com.students.tests;
-
-
-import static org.hamcrest.Matchers.*;
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import com.student.base.TestBase;
 public class StudentDeleteTest extends TestBase  {
 	
